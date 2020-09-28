@@ -1,0 +1,21 @@
+2020/9/28  
+1.学习小程序：
+1）添加vant组件
+  1、终端打开小程序所在目录
+  2、npm init初始化
+  3、npm install --production 安装生产环境，不要npm install都给装上，以免小程序包过大
+  4、安装vant ：npm i vant-weapp -S --production
+  5、微信开发者工具勾选 npm 构建
+   a、工具 》构建npm
+   b、详情》使用npm模块
+  6.如果报错的话 删除vant-weapp里的所有文件夹，然后去github上 https://github.com/youzan/vant-weapp 下载一份Vant UI，
+  将dist文件夹中的文件复制到 miniprogram_npm/vant-weapp（即下载一份Vant，之后替换掉项目中的文件）之后保存即可解决。
+  7.哪个页面需要使用对应的组件，哪个页面的json文件里再引入组件即可即可
+   引用：
+   "usingComponents": {
+    "van-button":"vant-weapp/button"
+  }
+  应用：
+  <van-button>按钮</van-button>
+  
+2）添加自定义组件
