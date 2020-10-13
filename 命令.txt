@@ -1,0 +1,44 @@
+1.git 配置代理
+git config --global http.proxy http://127.0.0.1:1080
+git config --global https.proxy http://127.0.0.1:1080
+取消代理：
+git config --global --unset http.proxy 
+git config --global --unset https.proxy 
+2.npm
+1）npm 配置代理
+npm config set proxy=http://127.0.0.1:8087
+npm config set registry=http://registry.npmjs.org
+
+2) npm 镜像
+npm config set registry https://registry.npm.taobao.org
+
+3）关于https
+经过上面设置使用了http开头的源，因此不需要设https_proxy了，否则还要增加一句:
+npm config set https-proxy http://server:port
+
+4）代理用户名和密码
+npm config set proxy http://username:password@server:port
+npm confit set https-proxy http://username:password@server:port
+
+5）取消代理
+npm config delete proxy
+npm config delete https-proxy
+
+6）npm config list  查看npm当前配置
+
+3.node-sass安装失败的解决方法
+设置全局镜像源
+npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
+来源：http://lzw.me/a/node-sass-install-helper.html
+
+4.Unable to look up github.com
+安装node相关依赖的时候，出现一些诡异的错误,原因是通过 git:// 方式连接github的时候，失败！！
+因此修改连接方式：
+git config --global url."https://".insteadOf git://
+
+继续 npm install 安装
+
+5.使用npm install --save-dev  自动配置package.json,然后会自动安装所需的依赖
+
+
+
